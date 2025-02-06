@@ -1,11 +1,10 @@
 const people = [
     { name: 'Lindsay Walton', title: 'Front-end Developer', email: 'lindsay.walton@example.com', role: 'Member' },
-    // More people...
   ]
   
   export default function Example() {
     return (
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div className="px-4">
         <div className="sm:flex sm:items-center">
           <div className="sm:flex-auto">
             <h1 className="text-base font-semibold text-gray-900">Situación general</h1>

@@ -1,10 +1,17 @@
-import { useState } from 'react'
 import Navbar from './components/ui/header';
 import Stats from './components/ui/stats';
 import Table from './components/ui/table';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import database from './config/firebase-config';
 
+import { onValue, ref } from 'firebase/database';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import './App.css'
+
+// Setup firebase Real Time DB
+onValue(ref(database, "vaina_colmados/situacion_general"), snapshot => {
+  let data = snapshot.val()
+  console.log(data)
+})
 
 function App() {
 
@@ -26,7 +33,7 @@ function App() {
         </TabsContent>
         <TabsContent value="parqueo">Change your password here.</TabsContent>
       </Tabs>
-      <Table className="mt-5"/>
+      <Table />
       </main>
     </>
   )
